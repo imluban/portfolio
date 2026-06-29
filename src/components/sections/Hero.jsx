@@ -6,7 +6,7 @@ import FadeIn from "../ui/FadeIn";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center relative">
+    <section className="min-h-screen flex items-center relative pt-36">
 
       <Container>
 
