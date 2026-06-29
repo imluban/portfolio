@@ -12,19 +12,19 @@ export default function Footer() {
             © 2026 Luban Noor
           </p>
 
-          <p className="text-zinc-500 text-sm">
-            <div className="flex items-center gap-2">
+          <div className="text-zinc-500 text-sm">
+            <p className="flex items-center">
               <span>Designed & Built by</span>
 
               <Image
-                src="/logo.png"
+                src="/logo22.png"
                 alt="LN"
-                width={24}
-                height={24}
-                className="drop-shadow-[0_0_8px_rgba(223,255,0,0.3)]"
+                width={30}
+                height={30}
+                className="ml-1 relative top-[0.7px] drop-shadow-[0_0_8px_rgba(223,255,0,0.3)]"
               />
-            </div>
-          </p>
+            </p>
+          </div>
 
         </div>
 
