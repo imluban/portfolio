@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Container from "../ui/Container";
+import FadeIn from "../ui/FadeIn";
 
 export default function Hero() {
   return (
@@ -9,6 +10,7 @@ export default function Hero() {
 
       <Container>
 
+        <FadeIn>
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
@@ -16,7 +18,7 @@ export default function Hero() {
           className="max-w-5xl"
         >
           <p className="uppercase tracking-[0.35em] text-[#dfff00] text-sm mb-8">
-            Full Stack Developer
+            Entrepreneur • Software & Web Developer • AI Enthusiast
           </p>
 
           <h1 className="text-7xl md:text-9xl font-black leading-none mb-8">
@@ -26,7 +28,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-zinc-400 text-xl max-w-2xl mb-10">
-            Building scalable web products,
+            Building scalable web & mobile products,
             intelligent systems,
             and digital experiences that create real business value.
           </p>
@@ -47,6 +49,7 @@ export default function Hero() {
             </a>
           </div>
         </motion.div>
+        </FadeIn>
 
       </Container>
 

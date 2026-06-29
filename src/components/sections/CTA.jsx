@@ -1,4 +1,5 @@
 import Container from "../ui/Container";
+import FadeIn from "../ui/FadeIn";
 
 export default function CTA() {
   return (
@@ -8,7 +9,8 @@ export default function CTA() {
     >
       <Container>
 
-        <div className="text-center">
+        <FadeIn>
+          <div className="text-center">
 
           <h2 className="text-6xl font-black mb-6">
             Let&apos;s Build Something Great
@@ -35,7 +37,8 @@ export default function CTA() {
           </a>
 
         </div>
-
+        </FadeIn>
+        
       </Container>
     </section>
   );

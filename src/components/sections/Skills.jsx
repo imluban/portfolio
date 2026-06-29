@@ -1,4 +1,5 @@
 import Container from "../ui/Container";
+import FadeIn from "../ui/FadeIn";
 
 const skills = [
   "Next.js",
@@ -17,6 +18,7 @@ export default function Skills() {
 
       <Container>
 
+        <FadeIn>
         <h2 className="text-5xl font-black mb-16">
           Skills
         </h2>
@@ -28,11 +30,17 @@ export default function Skills() {
               key={skill}
               className="
               p-8
+              rounded-3xl
               border
-              border-white/10
-              bg-white/[0.02]
-              hover:border-[#dfff00]
-              transition
+            border-white/10
+            bg-white/[0.03]
+              backdrop-blur-xl
+
+            hover:border-[#dfff00]
+              hover:-translate-y-2
+
+              transition-all
+              duration-300
               "
             >
               {skill}
@@ -40,6 +48,7 @@ export default function Skills() {
           ))}
 
         </div>
+        </FadeIn>
 
       </Container>
 

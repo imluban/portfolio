@@ -1,11 +1,13 @@
 import Container from "../ui/Container";
+import FadeIn from "../ui/FadeIn";
 
 export default function Experience() {
   return (
     <section className="py-32 border-t border-white/10">
 
       <Container>
-
+        
+        <FadeIn>
         <h2 className="text-5xl font-black mb-16">
           Experience
         </h2>
@@ -28,7 +30,8 @@ export default function Experience() {
           </div>
 
         </div>
-
+        </FadeIn>
+        
       </Container>
 
     </section>

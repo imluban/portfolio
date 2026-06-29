@@ -2,6 +2,7 @@ import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import BackgroundGlow from "@/components/ui/BackgroundGlow";
 
 export const metadata = {
   title: "Luban Noor",
@@ -12,6 +13,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+
+        <BackgroundGlow />
 
         <Navbar />
 

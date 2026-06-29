@@ -1,4 +1,5 @@
 import Container from "../ui/Container";
+import FadeIn from "../ui/FadeIn";
 
 export default function About() {
   return (
@@ -6,12 +7,13 @@ export default function About() {
 
       <Container>
 
+        <FadeIn>
         <div className="grid md:grid-cols-2 gap-16">
 
-          <div>
-            <p className="text-[#dfff00] uppercase tracking-widest mb-4">
-              About
-            </p>
+            <div>
+              <p className="text-[#dfff00] uppercase tracking-widest mb-4">
+                About
+              </p>
 
             <h2 className="text-5xl font-black">
               Engineering ideas into products.
@@ -20,13 +22,14 @@ export default function About() {
 
           <div>
             <p className="text-zinc-400 text-lg leading-relaxed">
-              I&apos;m a Full Stack Developer focused on building
+              I&apos;m a Full Stack Web & Software Developer focused on building
               scalable applications, clean user experiences,
               and systems that solve real-world problems.
             </p>
           </div>
 
         </div>
+        </FadeIn>
 
       </Container>
 

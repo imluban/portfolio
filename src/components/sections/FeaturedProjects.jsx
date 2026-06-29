@@ -1,4 +1,5 @@
 import Container from "../ui/Container";
+import FadeIn from "../ui/FadeIn";
 
 export default function FeaturedProjects() {
   return (
@@ -8,9 +9,10 @@ export default function FeaturedProjects() {
     >
       <Container>
 
-        <h2 className="text-5xl font-black mb-16">
-          Featured Projects
-        </h2>
+        <FadeIn>
+          <h2 className="text-5xl font-black mb-16">
+            Featured Projects
+          </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
 
@@ -40,7 +42,8 @@ export default function FeaturedProjects() {
           ))}
 
         </div>
-
+        </FadeIn>
+        
       </Container>
     </section>
   );
