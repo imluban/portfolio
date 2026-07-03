@@ -3,10 +3,62 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import BackgroundGlow from "@/components/ui/BackgroundGlow";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
-  title: "Luban Noor",
-  description: "Full Stack Developer",
+  metadataBase: new URL("https://lubannoor.com"),
+
+  title: {
+    default: "Luban Noor",
+    template: "%s | Luban Noor",
+  },
+
+  description:
+  "Entrepreneur and Software Developer building scalable AI-powered web and mobile applications.",
+
+  keywords: [
+    "Luban Noor",
+    "Software Developer",
+    "Entrepreneur",
+    "AI Developer",
+    "Full Stack Developer",
+    "Next.js",
+    "React",
+    "Mobile Development",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Web Development",
+    "Portfolio",
+    "Projects",
+    "Open Source",
+  ],
+
+  openGraph: {
+    title: "Luban Noor",
+    description:
+     "Entrepreneur and Software Developer building scalable AI-powered web and mobile applications.",
+    url: "https://lubannoor.com",
+    siteName: "Luban Noor",
+
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Luban Noor",
+    description:
+  "Entrepreneur and Software Developer building scalable AI-powered web and mobile applications.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -19,6 +71,8 @@ export default function RootLayout({ children }) {
         <Navbar />
 
         {children}
+
+        <Analytics />
 
         <Footer />
 

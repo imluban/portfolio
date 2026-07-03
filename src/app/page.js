@@ -4,15 +4,24 @@ import Skills from "@/components/sections/Skills";
 import Experience from "@/components/sections/Experience";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import CTA from "@/components/sections/CTA";
+import GithubSection from "@/components/sections/GithubSection";
+import GithubProfile from "@/components/sections/GithubProfile";
+import FounderStatement from "@/components/sections/FounderStatement";
+import CurrentFocus from "@/components/sections/CurrentFocus";
+import TechStack from "@/components/sections/TechStack";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
       <About />
-      <Skills />
+      <FounderStatement />
+      <CurrentFocus />
       <Experience />
       <FeaturedProjects />
+      <TechStack />
+      <GithubProfile />
+      <GithubSection />
       <CTA />
     </>
   );

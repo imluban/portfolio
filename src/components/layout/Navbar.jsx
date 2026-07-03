@@ -15,8 +15,8 @@ export default function Navbar() {
             <Image
               src="/logo22.png"
               alt="Luban Noor"
-              width={42}
-              height={42}
+              width={35}
+              height={35}
               priority
               className="drop-shadow-[0_0_10px_rgba(223,255,0,0.4)]"
             />

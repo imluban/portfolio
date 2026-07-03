@@ -28,9 +28,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-zinc-400 text-xl max-w-2xl mb-10">
-            Building scalable web & mobile products,
-            intelligent systems,
-            and digital experiences that create real business value.
+            Building scalable AI-powered web and mobile applications that transform ideas into impactful digital products.
           </p>
 
           <div className="flex flex-wrap gap-4">

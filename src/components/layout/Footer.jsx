@@ -19,8 +19,8 @@ export default function Footer() {
               <Image
                 src="/logo22.png"
                 alt="LN"
-                width={30}
-                height={30}
+                width={20}
+                height={20}
                 className="ml-1 relative top-[0.7px] drop-shadow-[0_0_8px_rgba(223,255,0,0.3)]"
               />
             </p>
