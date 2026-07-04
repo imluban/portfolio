@@ -2,8 +2,12 @@ import blogs from "@/data/blogs";
 import Link from "next/link";
 
 export default function BlogPage() {
-  const featured = blogs.filter(
+  const featured = blogs.find(
     (blog) => blog.featured
+  );
+
+  const regularBlogs = blogs.filter(
+    (blog) => !blog.featured
   );
 
   return (
@@ -13,53 +17,71 @@ export default function BlogPage() {
         Blog
       </h1>
 
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-6">
-          Featured Article
-        </h2>
+      {/* Featured Article */}
 
-        {featured.map((blog) => (
+      {featured && (
+        <section className="mb-20">
+
+          <h2 className="text-3xl font-bold mb-6">
+            Featured Article
+          </h2>
+
           <Link
-            key={blog.slug}
-            href={`/blog/${blog.slug}`}
+            href={`/blog/${featured.slug}`}
             className="
               block
               p-10
               rounded-3xl
               border
               border-[var(--accent)]
-              mb-8
+              bg-white/[0.02]
+              hover:-translate-y-2
+              transition-all
+              duration-300
             "
           >
-            <h3 className="text-3xl font-bold mb-4">
-              {blog.title}
+            <div className="text-sm text-[var(--accent)] mb-4">
+              {featured.readingTime}
+            </div>
+
+            <h3 className="text-5xl font-black mb-4">
+              {featured.title}
             </h3>
 
-            <p className="text-white/60">
-              {blog.excerpt}
+            <p className="text-white/60 text-lg">
+              {featured.excerpt}
             </p>
           </Link>
-        ))}
-      </section>
+
+        </section>
+      )}
+
+      {/* Remaining Articles */}
 
       <div className="grid md:grid-cols-2 gap-8">
-        {blogs.map((blog) => (
+
+        {regularBlogs.map((blog) => (
           <Link
             key={blog.slug}
             href={`/blog/${blog.slug}`}
             className="
-              border border-white/10
-              rounded-3xl
+              block
               p-8
+              rounded-3xl
+              border
+              border-white/10
+              bg-white/[0.02]
               hover:border-[var(--accent)]
-              transition
+              hover:-translate-y-2
+              transition-all
+              duration-300
             "
           >
-            <div className="text-sm text-white/50 mb-3">
+            <div className="text-sm text-white/50 mb-4">
               {blog.readingTime}
             </div>
 
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-3xl font-bold mb-4">
               {blog.title}
             </h2>
 
@@ -67,12 +89,13 @@ export default function BlogPage() {
               {blog.excerpt}
             </p>
 
-            <div className="flex gap-2 flex-wrap">
+            <div className="flex flex-wrap gap-2">
               {blog.tags.map((tag) => (
                 <span
                   key={tag}
                   className="
-                    px-3 py-1
+                    px-3
+                    py-1
                     rounded-full
                     bg-white/5
                     text-sm
@@ -82,8 +105,10 @@ export default function BlogPage() {
                 </span>
               ))}
             </div>
+
           </Link>
         ))}
+
       </div>
 
     </main>

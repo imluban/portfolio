@@ -1,17 +1,37 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function SectionTitle({
   number,
   title,
 }) {
   return (
-    <div className="mb-20">
-
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 30,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
+      transition={{
+        duration: 0.6,
+      }}
+      className="mb-20"
+    >
       <div className="flex items-center gap-4 mb-4">
 
         <span
           className="
-          text-[#dfff00]
-          text-sm
-          tracking-[0.3em]
+            text-[#dfff00]
+            text-sm
+            tracking-[0.3em]
           "
         >
           {number}
@@ -21,10 +41,27 @@ export default function SectionTitle({
 
       </div>
 
-      <h2 className="text-5xl md:text-6xl font-black">
-        {title}
-      </h2>
+      <motion.h2
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          delay: 0.15,
+          duration: 0.5,
+        }}
+        className="text-5xl md:text-6xl font-black"
+      >
+       {title}
+      </motion.h2>
 
-    </div>
+    </motion.div>
   );
 }

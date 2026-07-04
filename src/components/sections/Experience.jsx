@@ -1,5 +1,6 @@
 import Container from "../ui/Container";
 import FadeIn from "../ui/FadeIn";
+import Reveal from "../ui/Reveal";
 
 export default function Experience() {
   return (
@@ -14,7 +15,7 @@ export default function Experience() {
 
         <div className="space-y-12">
 
-          <div>
+          <Reveal delay={0.1}>
             <p className="text-[#dfff00]">
               2024 — Present
             </p>
@@ -27,7 +28,7 @@ export default function Experience() {
               Building modern web applications,
               automation systems and scalable products.
             </p>
-          </div>
+          </Reveal>
 
         </div>
         </FadeIn>

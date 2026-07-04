@@ -1,6 +1,7 @@
 import projects from "@/data/projects";
 import ProjectCard from "../cards/ProjectCard";
 import Container from "../ui/Container";
+import FadeIn from "../ui/FadeIn";
 
 export default function FeaturedProjects() {
   const featuredProjects = projects.filter(
@@ -14,6 +15,7 @@ export default function FeaturedProjects() {
     >
       <Container>
 
+        <FadeIn>
         <h2 className="text-5xl font-black mb-16">
           Featured Projects
         </h2>
@@ -28,6 +30,7 @@ export default function FeaturedProjects() {
           ))}
 
         </div>
+        </FadeIn>
 
       </Container>
     </section>

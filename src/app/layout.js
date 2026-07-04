@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import BackgroundGlow from "@/components/ui/BackgroundGlow";
 import { Analytics } from "@vercel/analytics/react";
+import Spotlight from "@/components/ui/Spotlight";
 
 export const metadata = {
   metadataBase: new URL("https://lubannoor.com"),
@@ -69,6 +70,8 @@ export default function RootLayout({ children }) {
         <BackgroundGlow />
 
         <Navbar />
+
+        <Spotlight />
 
         {children}
 

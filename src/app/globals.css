@@ -9,7 +9,13 @@ html {
 }
 
 body {
-  background: #070707;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(223,255,0,0.04),
+      transparent 40%
+    ),
+    #070707;
   color: white;
   position: relative;
 }
@@ -17,4 +23,37 @@ body {
 ::selection {
   background: var(--accent);
   color: black;
+}
+
+main,
+section,
+nav,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card,
+.repo-card,
+.blog-card {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.project-card:hover,
+.repo-card:hover,
+.blog-card:hover {
+  transform: translateY(-8px);
+}
+
+a {
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+a:hover {
+  text-shadow:
+    0 0 12px rgba(223,255,0,0.4);
 }

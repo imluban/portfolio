@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Reveal from "../ui/Reveal";
 
 export default function ProjectCard({ project }) {
   return (
+    <Reveal>
     <Link href={`/projects/${project.slug}`}>
       <div
         className="
@@ -46,5 +48,6 @@ export default function ProjectCard({ project }) {
         </div>
       </div>
     </Link>
+    </Reveal>
   );
 }

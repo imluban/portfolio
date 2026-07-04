@@ -4,6 +4,10 @@ import GithubStats from "@/components/github/GithubStats";
 export default async function GithubProfile() {
   const profile = await getGithubProfile();
 
+  if (!profile) {
+    return null;
+  }
+  
   return (
     <section className="py-32">
       <div className="max-w-6xl mx-auto px-6">

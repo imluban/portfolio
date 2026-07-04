@@ -1,37 +1,57 @@
 export async function getGithubProfile() {
-  const username = process.env.GITHUB_USERNAME;
+  const username =
+    process.env.GITHUB_USERNAME || "imluban";
 
-  const res = await fetch(
-    `https://api.github.com/users/${username}`,
-    {
-      next: {
-        revalidate: 3600,
-      },
+  try {
+    const res = await fetch(
+      `https://api.github.com/users/${username}`,
+      {
+        next: {
+          revalidate: 3600,
+        },
+      }
+    );
+
+    if (!res.ok) {
+      console.error(
+        "GitHub profile fetch failed:",
+        res.status
+      );
+      return null;
     }
-  );
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch profile");
+    return await res.json();
+  } catch (error) {
+    console.error(error);
+    return null;
   }
-
-  return res.json();
 }
 
 export async function getRepositories() {
-  const username = process.env.GITHUB_USERNAME;
+  const username =
+    process.env.GITHUB_USERNAME || "imluban";
 
-  const res = await fetch(
-    `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`,
-    {
-      next: {
-        revalidate: 3600,
-      },
+  try {
+    const res = await fetch(
+      `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`,
+      {
+        next: {
+          revalidate: 3600,
+        },
+      }
+    );
+
+    if (!res.ok) {
+      console.error(
+        "GitHub repo fetch failed:",
+        res.status
+      );
+      return [];
     }
-  );
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch repositories");
+    return await res.json();
+  } catch (error) {
+    console.error(error);
+    return [];
   }
-
-  return res.json();
 }

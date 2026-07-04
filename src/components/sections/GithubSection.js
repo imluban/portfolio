@@ -1,5 +1,6 @@
 import { getRepositories } from "@/lib/github";
 import RepoCard from "@/components/github/RepoCard";
+import Reveal from "../ui/Reveal";
 
 export default async function GithubSection() {
   const repos = await getRepositories();
@@ -27,11 +28,13 @@ export default async function GithubSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {repos.map((repo) => (
+          {repos.map((repo, index) => (
+            <Reveal key={repo.id} delay={index * 0.1}>
             <RepoCard
               key={repo.id}
               repo={repo}
             />
+            </Reveal>
           ))}
         </div>
       </div>
