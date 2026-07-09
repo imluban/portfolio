@@ -1,5 +1,5 @@
 import "./globals.css";
-
+import PageLoader from "@/components/layout/PageLoader";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import BackgroundGlow from "@/components/ui/BackgroundGlow";
@@ -66,6 +66,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+
+        <PageLoader />
 
         <BackgroundGlow />
 

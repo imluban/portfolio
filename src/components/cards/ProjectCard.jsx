@@ -7,16 +7,21 @@ export default function ProjectCard({ project }) {
     <Link href={`/projects/${project.slug}`}>
       <div
         className="
+        project-card
+
+        flex
+        flex-col
+        h-full
+
         p-8
         rounded-3xl
         border
         border-white/10
+
         bg-white/[0.03]
         backdrop-blur-xl
 
         hover:border-[#dfff00]
-        hover:-translate-y-2
-
         transition-all
         duration-300
         "
@@ -29,7 +34,7 @@ export default function ProjectCard({ project }) {
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="mt-autoflex flex-wrap gap-2">
           {project.tech.map((tech) => (
             <span
               key={tech}

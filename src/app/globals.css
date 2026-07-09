@@ -57,3 +57,23 @@ a:hover {
   text-shadow:
     0 0 12px rgba(223,255,0,0.4);
 }
+
+.blog-card {
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 0 30px rgba(223,255,0,0.08);
+}
+
+.project-card,
+.blog-card,
+.repo-card {
+  height: 100%;
+}

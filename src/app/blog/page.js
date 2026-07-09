@@ -1,5 +1,6 @@
 import blogs from "@/data/blogs";
 import Link from "next/link";
+import Reveal from "@/components/ui/Reveal";
 
 export default function BlogPage() {
   const featured = blogs.find(
@@ -20,6 +21,7 @@ export default function BlogPage() {
       {/* Featured Article */}
 
       {featured && (
+        <Reveal>
         <section className="mb-20">
 
           <h2 className="text-3xl font-bold mb-6">
@@ -29,6 +31,7 @@ export default function BlogPage() {
           <Link
             href={`/blog/${featured.slug}`}
             className="
+              blog-card
               block
               p-10
               rounded-3xl
@@ -54,59 +57,70 @@ export default function BlogPage() {
           </Link>
 
         </section>
+        </Reveal>
       )}
 
       {/* Remaining Articles */}
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-8 items-stretch">
 
-        {regularBlogs.map((blog) => (
-          <Link
+        {regularBlogs.map((blog, index) => (
+          <Reveal
             key={blog.slug}
-            href={`/blog/${blog.slug}`}
-            className="
-              block
-              p-8
-              rounded-3xl
-              border
-              border-white/10
-              bg-white/[0.02]
-              hover:border-[var(--accent)]
-              hover:-translate-y-2
-              transition-all
-              duration-300
-            "
+            delay={index * 0.1}
           >
-            <div className="text-sm text-white/50 mb-4">
-              {blog.readingTime}
-            </div>
+            <Link
+              key={blog.slug}
+              href={`/blog/${blog.slug}`}
+              className="
+                blog-card
+                flex
+                flex-col
+                h-full
 
-            <h2 className="text-3xl font-bold mb-4">
-              {blog.title}
-            </h2>
+                p-8
+                rounded-3xl
+                border
+                border-white/10
 
-            <p className="text-white/60 mb-6">
-              {blog.excerpt}
-            </p>
+                bg-white/[0.03]
+                backdrop-blur-xl
 
-            <div className="flex flex-wrap gap-2">
-              {blog.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="
-                    px-3
-                    py-1
-                    rounded-full
-                    bg-white/5
-                    text-sm
-                  "
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+                hover:border-[#dfff00]
+                transition-all
+                duration-300
+              "
+            >
+              <div className="text-sm text-white/50 mb-3">
+                {blog.readingTime}
+              </div>
 
-          </Link>
+              <h2 className="text-2xl font-bold mb-4">
+                {blog.title}
+              </h2>
+
+              <p className="text-white/60 mb-6">
+                {blog.excerpt}
+              </p>
+
+              <div className="mt-auto flex gap-2 flex-wrap">
+                {blog.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="
+                      px-3
+                      py-1
+                      rounded-full
+                      bg-white/5
+                      text-sm
+                    "
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </Link>
+          </Reveal>
         ))}
 
       </div>

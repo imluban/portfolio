@@ -20,7 +20,7 @@ export default function FeaturedProjects() {
           Featured Projects
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 items-stretch">
 
           {featuredProjects.map((project) => (
             <ProjectCard
