@@ -24,20 +24,21 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`
+        className="
           fixed
-          top-5
+          top-8
           left-0
           right-0
           z-50
           transition-all
           duration-300
-        `}
+        "
       >
         <Container>
 
           <div
             className={`
+              max-w-3xl
               mx-auto
               flex
               items-center
@@ -69,8 +70,8 @@ export default function Navbar() {
               <Image
                 src="/logo22.png"
                 alt="Luban Noor"
-                width={34}
-                height={34}
+                width={30}
+                height={30}
                 priority
                 className="
                   drop-shadow-[0_0_12px_rgba(223,255,0,0.5)]
@@ -83,7 +84,7 @@ export default function Navbar() {
                 hidden
                 md:flex
                 items-center
-                gap-8
+                gap-10
               "
             >
 
@@ -130,7 +131,7 @@ export default function Navbar() {
         <div
           className="
             fixed
-            top-28
+            top-32
             left-6
             right-6
             z-40

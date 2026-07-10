@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import BackgroundGlow from "@/components/ui/BackgroundGlow";
 import { Analytics } from "@vercel/analytics/react";
 import Spotlight from "@/components/ui/Spotlight";
+import "@fontsource/jetbrains-mono";
 
 export const metadata = {
   metadataBase: new URL("https://lubannoor.com"),

@@ -5,7 +5,7 @@ export default function CTA() {
   return (
     <section
       id="contact"
-      className="py-32 border-t border-white/10"
+      className="py-44 border-t border-white/10"
     >
       <Container>
 

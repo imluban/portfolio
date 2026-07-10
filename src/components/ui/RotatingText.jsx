@@ -24,7 +24,14 @@ export default function RotatingText() {
   }, []);
 
   return (
-    <div className="h-8 overflow-hidden">
+  <div className="flex items-center gap-4">
+
+    {/* Static Line */}
+    <div className="w-12 h-px bg-[#dfff00] flex-shrink-0" />
+
+    {/* Rotating Text */}
+    <div className="h-5 min-w-[320px] overflow-hidden">
+
       <AnimatePresence mode="wait">
         <motion.p
           key={words[index]}
@@ -44,6 +51,7 @@ export default function RotatingText() {
             duration: 0.35,
           }}
           className="
+            font-mono
             uppercase
             tracking-[0.35em]
             text-[#dfff00]
@@ -53,6 +61,9 @@ export default function RotatingText() {
           {words[index]}
         </motion.p>
       </AnimatePresence>
+
     </div>
-  );
+
+  </div>
+);
 }
