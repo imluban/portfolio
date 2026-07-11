@@ -9,6 +9,7 @@ import GithubProfile from "@/components/sections/GithubProfile";
 import FounderStatement from "@/components/sections/FounderStatement";
 import CurrentFocus from "@/components/sections/CurrentFocus";
 import TechStack from "@/components/sections/TechStack";
+import LiquidDivider from "@/components/sections/LiquidDivider";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <FounderStatement />
       <CurrentFocus />
       <Experience />
+      <LiquidDivider />
       <FeaturedProjects />
       <TechStack />
       <GithubProfile />
