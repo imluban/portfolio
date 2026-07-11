@@ -70,8 +70,8 @@ export default function Navbar() {
               <Image
                 src="/logo22.png"
                 alt="Luban Noor"
-                width={30}
-                height={30}
+                width={27}
+                height={27}
                 priority
                 className="
                   drop-shadow-[0_0_12px_rgba(223,255,0,0.5)]
@@ -84,25 +84,29 @@ export default function Navbar() {
                 hidden
                 md:flex
                 items-center
-                gap-10
+                gap-8
               "
             >
-
+             <b>
               <NavLink href="/">
                 Home
               </NavLink>
-
+             </b>
+             <b>
               <NavLink href="/projects">
                 Projects
               </NavLink>
-
+             </b>
+             <b>
               <NavLink href="/blog">
                 Blog
               </NavLink>
-
+             </b>
+             <b>
               <NavLink href="#contact">
                 Contact
               </NavLink>
+             </b>
 
             </nav>
 

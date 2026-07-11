@@ -5,6 +5,9 @@ import Container from "../ui/Container";
 import FadeIn from "../ui/FadeIn";
 import RotatingText from "../ui/RotatingText";
 import TextRoll from "../ui/TextRoll";
+import Link from "next/link";
+import { LiquidMetalButton } from "@/components/ui/liquid-metal";
+import { ArrowRight, Mail } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -69,40 +72,35 @@ export default function Hero() {
               ideas into impactful digital products.
             </p>
 
-            <div className="flex flex-wrap gap-5">
-              <a
-                href="#projects"
-                className="
-                  px-8
-                  py-4
-                  bg-[#dfff00]
-                  text-black
-                  rounded-full
-                  font-semibold
-                  hover:scale-105
-                  transition
-                  duration-300
-                "
-              >
-                View Projects
-              </a>
-
-              <a
-                href="#contact"
-                className="
-                  px-8
-                  py-4
-                  border
-                  border-white/10
-                  rounded-full
-                  hover:border-[#dfff00]
-                  hover:text-[#dfff00]
-                  transition
-                  duration-300
-                "
-              >
-                Contact Me
-              </a>
+            <div className="flex flex-wrap gap-5 mt-10">
+              <Link href="#projects">
+                <LiquidMetalButton
+                  size="md"
+                  icon={<ArrowRight className="w-4 h-4" />}
+                  metalConfig={{
+                    colorBack: "#DFFF00",
+                    colorTint: "#FFFFFF",
+                    speed: 0.35,
+                    distortion: 0.08,
+                  }}
+                >
+                  View Projects
+                </LiquidMetalButton>
+              </Link>
+              <Link href="#contact">
+                <LiquidMetalButton
+                  size="md"
+                  icon={<Mail className="w-4 h-4" />}
+                  metalConfig={{
+                    colorBack: "#DFFF00",
+                    colorTint: "#FFFFFF",
+                    speed: 0.35,
+                    distortion: 0.08,
+                  }}
+                >
+                  Contact Me
+                </LiquidMetalButton>
+              </Link>
             </div>
           </motion.div>
         </FadeIn>

@@ -1,11 +1,13 @@
 import Container from "../ui/Container";
 import FadeIn from "../ui/FadeIn";
+import { LiquidMetalButton } from "@/components/ui/liquid-metal";
+import { ArrowRight, Mail } from "lucide-react";
 
 export default function CTA() {
   return (
     <section
       id="contact"
-      className="py-44 border-t border-white/10"
+      className="pt-55 pb-20 border-t border-white/10"
     >
       <Container>
 
@@ -21,19 +23,19 @@ export default function CTA() {
             collaborations and full-time opportunities.
           </p>
 
-          <a
-            href="mailto:lubannoor@gmail.com"
-            className="
-            px-10
-            py-5
-            bg-[#dfff00]
-            text-black
-            rounded-full
-            inline-block
-            font-semibold
-            "
-          >
-            Get In Touch
+          <a href="mailto:lubannoor@gmail.com">
+            <LiquidMetalButton
+              size="md"
+              icon={<Mail className="w-4 h-4" />}
+              metalConfig={{
+                colorBack: "#DFFF00",
+                colorTint: "#FFFFFF",
+                speed: 0.35,
+                distortion: 0.08,
+              }}
+            >
+             Get In Touch
+            </LiquidMetalButton>
           </a>
 
         </div>
