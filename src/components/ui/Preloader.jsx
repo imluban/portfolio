@@ -31,15 +31,15 @@ export default function Preloader({ loading }) {
               scale: [0.9, 1, 1, 1.05],
             }}
             transition={{
-              duration: 2.2,
+              duration: 2.5,
               ease: "easeInOut",
             }}
           >
             <Image
               src="/logo22.png"
               alt="Luban Noor"
-              width={110}
-              height={110}
+              width={80}
+              height={80}
               priority
               className="
                 drop-shadow-[0_0_25px_rgba(223,255,0,0.4)]

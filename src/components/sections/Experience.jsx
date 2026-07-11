@@ -58,7 +58,7 @@ export default function Experience() {
           mb-3
         "
       >
-        2024 — Present
+        March 2024 — Present
       </p>
 
       <h4
@@ -69,8 +69,13 @@ export default function Experience() {
           mb-3
         "
       >
-        Full Stack Developer
+        LAXON
       </h4>
+      <h5>
+        <i>
+          Founder & CEO
+        </i>
+      </h5>
 
       <p
         className="
@@ -80,11 +85,13 @@ export default function Experience() {
           leading-relaxed
         "
       >
-        Building modern web applications,
-        intelligent automation systems,
-        scalable digital products, and
-        AI-powered solutions for real-world
-        business challenges.
+        ▪ Founded and operated a technology venture with planning, product direction and business operation
+responsibilities.
+▪ Coordinated development activities of the project and researched software solutions to meet user needs.
+▪ Made decisions about product development, adoption of technologies and strategies for future
+development.
+▪ Enhanced entrepreneurial, leadership and project management skills through practical experience.
+▪ Ongoing Projects: BlueTalk, Life OS.
       </p>
 
     </div>
@@ -102,7 +109,7 @@ export default function Experience() {
           mb-3
         "
       >
-        2023 — Present
+        June 2023 — August 2025
       </p>
 
       <h4
@@ -113,8 +120,13 @@ export default function Experience() {
           mb-3
         "
       >
-        AI Product Builder
+        IT Career Solution
       </h4>
+      <h5>
+        <i>
+          Intern Web Developer
+        </i>
+      </h5>
 
       <p
         className="
@@ -157,7 +169,7 @@ export default function Experience() {
           mb-3
         "
       >
-        Entrepreneur
+        Freelancer
       </h4>
 
       <p
