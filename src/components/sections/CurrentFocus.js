@@ -1,11 +1,12 @@
 import FadeIn from "../ui/FadeIn";
 import Container from "../ui/Container";
+import { AsciiGlitchRipple } from "@/components/ui/ascii-glitch-ripple";
 
 const focusItems = [
-  "AI-Powered SaaS Products",
-  "Intelligent Automation Systems",
-  "Modern Web Applications",
-  "Cross-Platform Mobile Experiences",
+  "Developing AI-Powered SaaS Products That Solve Meaningful Problems",
+  "Building Intelligent Automation Systems for Modern Businesses",
+  "Designing Scalable Web Applications with Performance in Mind",
+  "Creating Seamless Cross-Platform Mobile Experiences at Scale",
 ];
 
 export default function CurrentFocus() {
@@ -76,40 +77,49 @@ export default function CurrentFocus() {
           </div>
 
           {/* Focus Areas */}
-          <div className="max-w-4xl">
-            {focusItems.map((item) => (
-              <div
-                key={item}
-                className="
-                  flex
-                  items-center
-                  gap-6
-                  py-8
-                  border-b
-                  border-white/10
-                "
-              >
-                <span
-                  className="
-                    text-[var(--accent)]
-                    text-xl
-                  "
-                >
-                  →
-                </span>
+<div className="max-w-4xl">
+  {focusItems.map((item) => (
+    <div
+      key={item}
+      className="
+        flex
+        items-center
+        gap-5
+        py-7
+        border-b
+        border-white/10
+      "
+    >
+      <span
+        className="
+          text-[var(--accent)]
+          text-lg
+          opacity-70
+          shrink-0
+        "
+      >
+        →
+      </span>
 
-                <h4
-                  className="
-                    text-2xl
-                    md:text-2xl
-                    font-bold
-                  "
-                >
-                  {item}
-                </h4>
-              </div>
-            ))}
-          </div>
+      <AsciiGlitchRipple
+        as="div"
+        dur={1000}
+        spread={1.2}
+        className="
+          text-lg
+          font-mono
+          md:text-xl
+          text-white/50
+          hover:text-white
+          transition-colors
+          duration-300
+        "
+      >
+        {item}
+      </AsciiGlitchRipple>
+    </div>
+  ))}
+</div>
           </div>
 
         </FadeIn>

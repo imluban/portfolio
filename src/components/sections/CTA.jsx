@@ -1,7 +1,7 @@
 import Container from "../ui/Container";
 import FadeIn from "../ui/FadeIn";
 import { LiquidMetalButton } from "@/components/ui/liquid-metal";
-import { ArrowRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function CTA() {
   return (
