@@ -1,46 +1,81 @@
 import Container from "../ui/Container";
 import FadeIn from "../ui/FadeIn";
-import { LiquidMetalButton } from "@/components/ui/liquid-metal";
-import { Mail } from "lucide-react";
+import StaggeredGrid from "@/components/ui/staggered-grid";
+
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+} from "react-icons/fa";
+
+import { FaXTwitter } from "react-icons/fa6";
+
+import {
+  Mail,
+  FileText,
+} from "lucide-react";
 
 export default function CTA() {
+  const bentoItems = [
+  {
+    id: 1,
+    title: "GitHub",
+    image: "/socials/github.jpg",
+    icon: <FaGithub size={20} />,
+    url: "https://github.com/imluban",
+  },
+  {
+    id: 2,
+    title: "LinkedIn",
+    image: "/socials/linkedin.jpg",
+    icon: <FaLinkedin size={20} />,
+    url: "https://linkedin.com/in/lubannoor",
+  },
+  {
+    id: 3,
+    title: "Email",
+    image: "/socials/email.jpg",
+    icon: <Mail size={20} />,
+    url: "mailto:lubannoor@gmail.com",
+  },
+  {
+    id: 4,
+    title: "Twitter / X",
+    image: "/socials/twitter.jpg",
+    icon: <FaXTwitter size={20} />,
+    url: "https://x.com/LubanNoor",
+  },
+  {
+    id: 5,
+    title: "Instagram",
+    image: "/socials/instagram.jpg",
+    icon: <FaInstagram size={20} />,
+    url: "https://instagram.com/lubannoor",
+  },
+];
+
   return (
     <section
       id="contact"
-      className="pt-55 pb-20 border-t border-white/10"
+      className="pt-40 pb-20 border-t border-white/10"
     >
       <Container>
-
         <FadeIn>
-          <div className="text-center">
 
-          <h2 className="text-6xl font-black mb-6">
-            Let&apos;s Build Something Great
-          </h2>
+          <StaggeredGrid
+            centerText="CONNECT WITH ME"
+            showFooter={false}
+            bentoItems={bentoItems}
+            images={[
+              "github",
+              "linkedin",
+              "email",
+              "twitter",
+              "instagram",
+            ]}
+          />
 
-          <p className="text-zinc-400 mb-10">
-            Open for freelance projects,
-            collaborations and full-time opportunities.
-          </p>
-
-          <a href="mailto:lubannoor@gmail.com">
-            <LiquidMetalButton
-              size="md"
-              icon={<Mail className="w-4 h-4" />}
-              metalConfig={{
-                colorBack: "#DFFF00",
-                colorTint: "#FFFFFF",
-                speed: 0.35,
-                distortion: 0.08,
-              }}
-            >
-             Get In Touch
-            </LiquidMetalButton>
-          </a>
-
-        </div>
         </FadeIn>
-        
       </Container>
     </section>
   );

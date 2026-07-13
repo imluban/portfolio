@@ -53,7 +53,7 @@ export default function Navbar() {
               duration-300
               ${
                 scrolled
-                  ? "h-14 shadow-[0_0_30px_rgba(223,255,0,0.08)]"
+                  ? "h-14"
                   : "h-20"
               }
             `}
@@ -73,9 +73,6 @@ export default function Navbar() {
                 width={27}
                 height={27}
                 priority
-                className="
-                  drop-shadow-[0_0_12px_rgba(223,255,0,0.5)]
-                "
               />
             </Link>
 
