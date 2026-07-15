@@ -7,43 +7,46 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+const [scrolled, setScrolled] = useState(false);
+const [mobileOpen, setMobileOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
+useEffect(() => {
+const handleScroll = () => {
+setScrolled(window.scrollY > 40);
+};
 
-    window.addEventListener("scroll", handleScroll);
 
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
-  }, []);
+window.addEventListener("scroll", handleScroll);
 
-  return (
-    <>
-      <header
-        className="
-          fixed
-          top-8
-          left-0
-          right-0
-          z-50
-          transition-all
-          duration-300
-        "
-      >
-        <Container>
+return () =>
+  window.removeEventListener("scroll", handleScroll);
 
-          <div
-            className={`
-              max-w-3xl
+
+}, []);
+
+const closeMenu = () => {
+setMobileOpen(false);
+};
+
+return (
+<> <header
+     className="
+       fixed
+       top-2
+       left-0
+       right-0
+       z-50
+       transition-all
+       duration-300
+     "
+   > <Container>
+<div
+className={`               max-w-3xl
               mx-auto
               flex
               items-center
               justify-between
-              rounded-full
+              rounded-4xl
               border
               border-white/10
               backdrop-blur-2xl
@@ -51,141 +54,190 @@ export default function Navbar() {
               px-8
               transition-all
               duration-300
-              ${
-                scrolled
-                  ? "h-14"
-                  : "h-20"
-              }
+              ${scrolled ? "h-14" : "h-17"}
             `}
-          >
+> <Link
+           href="/"
+           className="transition duration-300"
+         > <Image
+             src="/logo22.png"
+             alt="Luban Noor"
+             width={27}
+             height={27}
+             priority
+           /> </Link>
 
-            <Link
-              href="/"
-              className="
-                transition
-                duration-300
-                hover:scale-110
-              "
-            >
-              <Image
-                src="/logo22.png"
-                alt="Luban Noor"
-                width={27}
-                height={27}
-                priority
-              />
-            </Link>
-
-            <nav
-              className="
-                hidden
-                md:flex
-                items-center
-                gap-8
-              "
-            >
-             <b>
-              <NavLink href="/">
-                Home
-              </NavLink>
-             </b>
-             <b>
-              <NavLink href="/projects">
-                Projects
-              </NavLink>
-             </b>
-             <b>
-              <NavLink href="/blog">
-                Blog
-              </NavLink>
-             </b>
-             <b>
-              <NavLink href="#contact">
-                Contact
-              </NavLink>
-             </b>
-
-            </nav>
-
-            <button
-              onClick={() =>
-                setMobileOpen(!mobileOpen)
-              }
-              className="
-                md:hidden
-                text-white
-              "
-            >
-              {mobileOpen ? (
-                <X size={24} />
-              ) : (
-                <Menu size={24} />
-              )}
-            </button>
-
-          </div>
-
-        </Container>
-      </header>
-
-      {mobileOpen && (
-        <div
+        <nav
           className="
-            fixed
-            top-32
-            left-6
-            right-6
-            z-40
-            rounded-3xl
-            border
-            border-white/10
-            bg-black/90
-            backdrop-blur-2xl
-            p-6
-            md:hidden
+            hidden
+            md:flex
+            items-center
+            gap-6
           "
         >
-          <div className="flex flex-col gap-5">
+          <NavLink href="/">Home</NavLink>
 
-            <Link href="/">
-              Home
-            </Link>
+          <NavLink href="/projects">
+            Projects
+          </NavLink>
 
-            <Link href="/projects">
-              Projects
-            </Link>
+          <NavLink href="/blog">
+            Blog
+          </NavLink>
 
-            <Link href="/blog">
-              Blog
-            </Link>
+          <NavLink href="#contact">
+            Contact
+          </NavLink>
+        </nav>
 
-            <Link href="#contact">
-              Contact
-            </Link>
+        <button
+          onClick={() =>
+            setMobileOpen(!mobileOpen)
+          }
+          className="
+            md:hidden
+            relative
+            w-6
+            h-6
+            text-white
+          "
+        >
+          <Menu
+            size={24}
+            className={`
+              absolute
+              inset-0
+              transition-all
+              duration-300
+              ease-out
+              ${
+                mobileOpen
+                  ? "opacity-0 rotate-90 scale-75"
+                  : "opacity-100 rotate-0 scale-100"
+              }
+            `}
+          />
 
-          </div>
-        </div>
-      )}
-    </>
-  );
+          <X
+            size={24}
+            className={`
+              absolute
+              inset-0
+              transition-all
+              duration-300
+              ease-out
+              ${
+                mobileOpen
+                  ? "opacity-100 rotate-0 scale-100"
+                  : "opacity-0 -rotate-90 scale-75"
+              }
+            `}
+          />
+        </button>
+      </div>
+    </Container>
+  </header>
+
+  <div
+    className={`
+      fixed
+      top-20
+      left-4
+      right-4
+      z-40
+      md:hidden
+
+      transition-all
+      duration-500
+      ease-[cubic-bezier(0.22,1,0.36,1)]
+
+      ${
+        mobileOpen
+          ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
+          : "opacity-0 -translate-y-4 scale-95 pointer-events-none"
+      }
+    `}
+  >
+    <div
+      className="
+        rounded-4xl
+        border
+        border-white/10
+        bg-black/40
+        backdrop-blur-2xl
+        shadow-[0_8px_40px_rgba(0,0,0,0.35)]
+        p-6
+      "
+    >
+      <div className="flex flex-col gap-5">
+        <MobileLink
+          href="/"
+          onClick={closeMenu}
+        >
+          Home
+        </MobileLink>
+
+        <MobileLink
+          href="/projects"
+          onClick={closeMenu}
+        >
+          Projects
+        </MobileLink>
+
+        <MobileLink
+          href="/blog"
+          onClick={closeMenu}
+        >
+          Blog
+        </MobileLink>
+
+        <MobileLink
+          href="#contact"
+          onClick={closeMenu}
+        >
+          Contact
+        </MobileLink>
+      </div>
+    </div>
+  </div>
+</>
+
+);
 }
 
 function NavLink({
-  href,
-  children,
+href,
+children,
 }) {
-  return (
-    <Link
-      href={href}
-      className="
-        text-zinc-400
-        hover:text-[#dfff00]
-        transition
-        duration-300
-        relative
-      "
-    >
-      {children}
-    </Link>
-  );
+return ( <Link
+   href={href}
+   className="
+     text-zinc-400
+     hover:text-[#dfff00]
+     transition
+     duration-300
+   "
+ >
+{children} </Link>
+);
+}
+
+function MobileLink({
+href,
+children,
+onClick,
+}) {
+return ( <Link
+   href={href}
+   onClick={onClick}
+   className="
+     text-zinc-400
+     hover:text-[#dfff00]
+     transition-all
+     duration-300
+     hover:translate-x-2
+   "
+ >
+{children} </Link>
+);
 }
