@@ -57,13 +57,12 @@ export default function CTA() {
   return (
     <section
       id="contact"
-      className="pt-40 pb-20 border-t border-white/10"
+      className="pt-25 pb-0 border-t border-white/10"
     >
       <Container>
         <FadeIn>
 
           <StaggeredGrid
-            centerText="CONNECT WITH ME"
             showFooter={false}
             bentoItems={bentoItems}
             images={[

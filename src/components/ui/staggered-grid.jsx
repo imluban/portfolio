@@ -2,6 +2,7 @@
 
 import { LiquidMetal } from "@/components/ui/liquid-metal";
 import React, { useEffect, useRef, useState } from 'react';
+import MorphText from "@/components/ui/morph-text";
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import imagesLoaded from 'imagesloaded'
@@ -45,16 +46,9 @@ export function StaggeredGrid({
 ];
     const [isLoaded, setIsLoaded] = useState(false)
     const gridFullRef = useRef(null)
-    const textRef = useRef(null)
 
     // Bento Grid State
     const [activeBento, setActiveBento] = useState(0);
-
-    const splitText = (text) => {
-        return text.split('').map((char, i) => (
-            <span key={i} className="char inline-block" style={{ willChange: 'transform' }}>{char === ' ' ? '\u00A0' : char}</span>
-        ));
-    }
 
     useEffect(() => {
         const handleLoad = () => {
@@ -77,29 +71,6 @@ export function StaggeredGrid({
 
     useEffect(() => {
         if (!isLoaded) return
-
-        // Animate Text Element
-        if (textRef.current) {
-            const chars = textRef.current.querySelectorAll('.char')
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: textRef.current,
-                    scroller: scroller || undefined,
-                    start: 'top bottom',
-                    end: 'center center-=25%',
-                    scrub: 1,
-                }
-            })
-                .from(chars, {
-                    ease: 'sine.out',
-                    yPercent: 300,
-                    autoAlpha: 0,
-                    stagger: {
-                        each: 0.05,
-                        from: 'center'
-                    }
-                })
-        }
 
         // Animate Full Grid
         if (gridFullRef.current) {
@@ -183,17 +154,24 @@ export function StaggeredGrid({
             style={{
                 '--grid-item-translate': '0px'
             }}>
-            <section className="grid place-items-center w-full relative mt-[10vh]">
-                <div
-                    ref={textRef}
-                    className="text font-alt uppercase flex content-center text-[clamp(1.8rem,6vw,4rem)] leading-[0.9] text-white font-black tracking-tight">
-                    {splitText(centerText)}
-                </div>
-            </section>
+            <section className="grid place-items-center w-full relative mt-[1vh] mb-[1vh]">
+  <MorphText
+  words={[
+    "CONNECT",
+    "WITH",
+    "ME",
+  ]}
+  interval={2000}
+  subtext="Let's build something extraordinary."
+  fontSize="clamp(2.5rem, 8vw, 5rem)"
+  textClassName="text-white font-black"
+  subtextClassName="text-zinc-500"
+/>
+</section>
             <section className="grid place-items-center w-full relative">
                 <div
                     ref={gridFullRef}
-                    className="grid--full relative w-full my-[10vh] h-auto aspect-[1.1] max-w-none p-4 grid gap-4 grid-cols-7 grid-rows-5">
+                    className="grid--full relative w-full h-auto aspect-[1.3] max-w-none p-4 grid gap-4 grid-cols-7 grid-rows-4">
                     <div
                         className="grid-overlay absolute inset-0 z-[15] pointer-events-none opacity-0 bg-white/80 dark:bg-black/80 rounded-lg transition-opacity duration-500" />
                     {mixedGridItems.map((item, i) => {
