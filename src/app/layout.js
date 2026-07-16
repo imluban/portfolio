@@ -70,11 +70,11 @@ export default function RootLayout({ children }) {
 
         <PageLoader />
 
-        <BackgroundGlow />
+        {/*<BackgroundGlow />*/}
 
         <Navbar />
 
-        <Spotlight />
+        {/* <Spotlight /> */}
 
         {children}
 
