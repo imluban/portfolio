@@ -154,7 +154,7 @@ export function StaggeredGrid({
             style={{
                 '--grid-item-translate': '0px'
             }}>
-            <section className="grid place-items-center w-full relative mt-[1vh] mb-[1vh]">
+            <section className="grid place-items-center w-full relative pt-35 pb-0">
   <MorphText
   words={[
     "CONNECT",
@@ -168,7 +168,7 @@ export function StaggeredGrid({
   subtextClassName="text-zinc-500"
 />
 </section>
-            <section className="grid place-items-center w-full relative">
+            <section className="grid place-items-center w-full relative mb-0">
                 <div
                     ref={gridFullRef}
                     className="grid--full relative w-full h-auto aspect-[1.3] max-w-none p-4 grid gap-4 grid-cols-7 grid-rows-4">

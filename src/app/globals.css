@@ -244,3 +244,8 @@ a:hover {
     background-position: 300% 50%;
   }
 }
+
+.liquidChrome-container {
+  width: 100%;
+  height: 100%;
+}

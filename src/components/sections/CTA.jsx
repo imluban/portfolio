@@ -1,6 +1,7 @@
 import Container from "../ui/Container";
 import FadeIn from "../ui/FadeIn";
 import StaggeredGrid from "@/components/ui/staggered-grid";
+import LiquidChrome from "@/components/ui/liquid-chrome";
 
 import {
   FaGithub,
@@ -55,13 +56,26 @@ export default function CTA() {
 ];
 
   return (
-    <section
-      id="contact"
-      className="pt-25 pb-0 border-t border-white/10"
-    >
-      <Container>
-        <FadeIn>
+  <section
+    id="contact"
+    className="relative pt-25 pb-0 border-t border-white/10 overflow-hidden"
+  >
+    {/* Liquid Chrome Background */}
+    <div className="absolute inset-0 z-0">
+      <LiquidChrome
+        baseColor={[0.08, 0.08, 0.08]}
+        speed={0.3}
+        amplitude={0.3}
+        interactive
+      />
+    </div>
 
+    {/* Dark Overlay */}
+    <div className="absolute inset-0 bg-black/55 z-[1] pointer-events-none" />
+
+    <Container>
+      <div className="relative z-10">
+        <FadeIn>
           <StaggeredGrid
             showFooter={false}
             bentoItems={bentoItems}
@@ -73,9 +87,9 @@ export default function CTA() {
               "instagram",
             ]}
           />
-
         </FadeIn>
-      </Container>
-    </section>
-  );
+      </div>
+    </Container>
+  </section>
+);
 }

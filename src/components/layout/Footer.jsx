@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 py-14 mt-32">
+    <footer className="border-t border-white/10 py-14 mt-0">
       <Container>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -21,7 +21,7 @@ export default function Footer() {
                 alt="LAXON"
                 width={60}
                 height={60}
-                className="ml-1 relative top-[0.6px] drop-shadow-[0_0_8px_rgba(223,255,0,0.3)]"
+                className="ml-1 relative top-[0.6px]"
               />
             </p>
           </div>
