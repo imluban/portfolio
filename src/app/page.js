@@ -10,10 +10,14 @@ import FounderStatement from "@/components/sections/FounderStatement";
 import CurrentFocus from "@/components/sections/CurrentFocus";
 import TechStack from "@/components/sections/TechStack";
 import LiquidDivider from "@/components/sections/LiquidDivider";
+import MatrixProgress from "@/components/ui/MatrixProgress";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function HomePage() {
   return (
     <>
+      <MatrixProgress />
+      <ScrollToTop />
       <Hero />
       <About />
       <FounderStatement />

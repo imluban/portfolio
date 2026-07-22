@@ -4,7 +4,9 @@ import Reveal from "../ui/Reveal";
 
 export default function Experience() {
   return (
-    <section className="py-32">
+    <section 
+    id="experience"
+    className="py-32">
 
       <Container>
 

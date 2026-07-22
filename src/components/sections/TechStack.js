@@ -45,7 +45,9 @@ const stacks = [
 
 export default function TechStack() {
   return (
-    <section className="py-32">
+    <section 
+    id="stack"
+    className="py-32">
       <Container>
 
         <FadeIn>

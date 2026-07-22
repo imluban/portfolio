@@ -3,7 +3,9 @@ import Container from "../ui/Container";
 
 export default function FounderStatement() {
   return (
-    <section className="py-32">
+    <section 
+    id="founder"
+    className="py-32">
       <Container>
 
           <FadeIn>

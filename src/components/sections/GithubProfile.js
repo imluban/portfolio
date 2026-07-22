@@ -10,7 +10,9 @@ export default async function GithubProfile() {
   }
 
   return (
-    <section className="py-32">
+    <section 
+    id="github"
+    className="py-32">
       <Container>
 
         {/* Section Header */}

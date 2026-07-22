@@ -249,3 +249,168 @@ a:hover {
   width: 100%;
   height: 100%;
 }
+
+/* =========================
+   MATRIX SCANLINE PROGRESS
+========================= */
+
+.matrix-progress {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 1px;
+  height: 220px;
+
+  background:
+  repeating-linear-gradient(
+    to bottom,
+    rgba(223,255,0,.08) 0px,
+    rgba(223,255,0,.08) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+
+  overflow: hidden;
+
+  z-index: 999;
+}
+
+.matrix-progress-fill {
+  width: 100%;
+  height: var(--scroll-progress, 0%);
+
+  background: #dfff00;
+
+  box-shadow:
+    0 0 8px #dfff00,
+    0 0 20px rgba(223,255,0,.5),
+    0 0 40px rgba(223,255,0,.25);
+
+  transition: height 0.08s linear;
+}
+
+.matrix-progress-fill::after {
+  content: "";
+
+  position: absolute;
+
+  left: -8px;
+  width: 18px;
+  height: 8px;
+
+  bottom: 0;
+
+  background: #dfff00;
+
+  filter: blur(4px);
+
+  box-shadow:
+    0 0 12px #dfff00,
+    0 0 24px #dfff00;
+}
+
+/* moving scan line */
+
+.matrix-progress::before {
+  content: "";
+
+  position: absolute;
+
+  left: -6px;
+
+  width: 14px;
+  height: 20px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(223,255,0,.9),
+    transparent
+  );
+
+  animation: matrixScan 2s linear infinite;
+}
+
+@keyframes matrixScan {
+  from {
+    top: -20px;
+  }
+
+  to {
+    top: 220px;
+  }
+}
+
+/* =========================
+   SCROLL TO TOP
+========================= */
+
+.scroll-top-btn {
+  position: fixed;
+
+  bottom: 32px;
+  right: 22px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: rgba(10, 10, 10, 0.85);
+
+  border: 1px solid rgba(223, 255, 0, 0.15);
+
+  color: #dfff00;
+
+  backdrop-filter: blur(12px);
+
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  z-index: 999;
+}
+
+.scroll-top-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  border-color: rgba(223, 255, 0, 0.6);
+
+  box-shadow:
+    0 0 12px rgba(223, 255, 0, 0.25),
+    0 0 30px rgba(223, 255, 0, 0.1);
+
+  transform: translateY(-3px);
+}
+
+.scroll-top-btn svg {
+  stroke-width: 2.5;
+}
+
+@media (max-width: 1024px) {
+  .scroll-top-btn {
+    bottom: 20px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}
