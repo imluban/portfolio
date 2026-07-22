@@ -414,3 +414,124 @@ a:hover {
     height: 44px;
   }
 }
+/* =========================
+   MATRIX TYPING ROLE
+========================= */
+
+.typing-terminal {
+  display: inline-flex;
+  align-items: center;
+
+  font-family: ui-monospace, monospace;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #dfff00;
+
+  padding-left: 0.5%;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    0 0 10px rgba(223,255,0,.35);
+}
+
+.typing-prompt {
+  margin-right: 4px;
+  color: #dfff00;
+}
+
+.typing-terminal::after {
+  content: "";
+
+  width: 8px;
+  height: 16px;
+
+  margin-left: 4px;
+
+  background: #dfff00;
+
+  animation: matrixCursor 1s infinite;
+}
+
+@keyframes matrixCursor {
+  0%,50% {
+    opacity: 1;
+  }
+
+  51%,100% {
+    opacity: 0;
+  }
+}
+
+/* =========================
+   MATRIX COMMAND PALETTE
+========================= */
+
+.matrix-command {
+  position: fixed;
+
+  top: 20%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 650px;
+  max-width: 92vw;
+
+  background: rgba(7,7,7,.96);
+
+  border: 1px solid rgba(223,255,0,.15);
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 0 40px rgba(223,255,0,.08);
+
+  z-index: 99999;
+}
+
+.matrix-command-input {
+  width: 100%;
+
+  background: transparent;
+
+  border: none;
+
+  outline: none;
+
+  padding: 18px 20px;
+
+  color: #dfff00;
+
+  font-family: monospace;
+
+  font-size: 15px;
+
+  border-bottom:
+    1px solid rgba(223,255,0,.08);
+}
+
+.matrix-command [cmdk-item] {
+  padding: 14px 20px;
+
+  cursor: pointer;
+
+  color: #9f9f9f;
+
+  transition: all .15s ease;
+}
+
+.matrix-command [cmdk-item][data-selected="true"] {
+  background:
+    rgba(223,255,0,.08);
+
+  color: #dfff00;
+}

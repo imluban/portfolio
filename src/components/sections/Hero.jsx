@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Container from "../ui/Container";
 import FadeIn from "../ui/FadeIn";
-import RotatingText from "../ui/RotatingText";
+import TypingRole from "@/components/ui/TypingRole";
 import TextRoll from "../ui/TextRoll";
 import Link from "next/link";
 import { LiquidMetalButton } from "@/components/ui/liquid-metal";
@@ -56,7 +56,7 @@ return ( <section
           className="max-w-6xl"
         >
           <div className="mb-10">
-            <RotatingText />
+            <TypingRole />
           </div>
 
           <div className="mb-12">

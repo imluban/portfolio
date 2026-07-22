@@ -12,12 +12,14 @@ import TechStack from "@/components/sections/TechStack";
 import LiquidDivider from "@/components/sections/LiquidDivider";
 import MatrixProgress from "@/components/ui/MatrixProgress";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import CommandPalette from "@/components/ui/CommandPalette";
 
 export default function HomePage() {
   return (
     <>
       <MatrixProgress />
       <ScrollToTop />
+      <CommandPalette />
       <Hero />
       <About />
       <FounderStatement />
